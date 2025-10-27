@@ -107,7 +107,7 @@
     }
 
     /* --- Tarjetas de contenido --- */
-    .info, .soporte, .faq, .contacto {
+    .info, .planes, .soporte, .faq, .contacto {
       background: #fff;
       border-radius: 16px;
       box-shadow: 0 4px 15px rgba(0,0,0,0.06);
@@ -116,7 +116,7 @@
       transition: transform 0.3s, box-shadow 0.3s;
     }
 
-    .info:hover, .soporte:hover, .faq:hover, .contacto:hover {
+    .info:hover, .planes:hover, .soporte:hover, .faq:hover, .contacto:hover {
       transform: translateY(-4px);
       box-shadow: 0 6px 18px rgba(0,0,0,0.08);
     }
@@ -128,6 +128,69 @@
 
     li strong {
       color: #ff6600;
+    }
+
+    /* --- Subbloques dentro de Info --- */
+    .subbloques {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 30px;
+      justify-content: center;
+      margin-top: 30px;
+    }
+
+    .bloque {
+      flex: 1 1 300px;
+      background: #fff;
+      border: 1px solid #eee;
+      border-radius: 12px;
+      padding: 25px;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+      transition: all 0.3s ease;
+    }
+
+    .bloque:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+    }
+
+    .bloque h3 {
+      color: #ff6600;
+      font-size: 1.3rem;
+      margin-bottom: 10px;
+      text-align: center;
+    }
+
+    .bloque p {
+      font-size: 1rem;
+      text-align: center;
+      color: #444;
+    }
+
+    /* --- Sección Planes --- */
+    .planes img {
+      width: 100%;
+      max-width: 900px;
+      height: auto;
+      display: block;
+      margin: 0 auto 25px auto;
+      border-radius: 12px;
+      object-fit: cover;
+    }
+
+    .planes h3 {
+      text-align: center;
+      color: #ff6600;
+      font-size: 1.5rem;
+      margin-bottom: 10px;
+    }
+
+    .planes p {
+      text-align: center;
+      color: #444;
+      font-size: 1rem;
+      max-width: 800px;
+      margin: 0 auto;
     }
 
     /* --- Redes --- */
@@ -176,7 +239,7 @@
         gap: 15px;
       }
 
-      .info, .soporte, .faq, .contacto {
+      .info, .planes, .soporte, .faq, .contacto {
         padding: 30px 20px;
       }
     }
@@ -208,6 +271,7 @@
     <div class="logo">Tutv Mex</div>
     <div class="menu">
       <a href="#inicio">Inicio</a>
+      <a href="#planes">Planes</a>
       <a href="#soporte">Soporte</a>
       <a href="#faq">FAQ</a>
       <a href="#contacto">Contacto</a>
@@ -220,12 +284,42 @@
     <p>Información, ayuda y soporte oficial</p>
   </header>
 
-  <!-- Sección Sobre Nosotros -->
+  <!-- Sección Info -->
   <section class="info" id="nosotros">
     <h2>Sobre Nosotros</h2>
     <p>
       En <strong>Tutv Mex</strong> ofrecemos soluciones modernas de entretenimiento y comunicación. 
       Nuestra misión es brindar una experiencia confiable, accesible y siempre actualizada para todos nuestros usuarios.
+    </p>
+
+    <div class="subbloques">
+      <div class="bloque">
+        <h3>📺 Información</h3>
+        <p>
+          Aquí podrás conocer todo sobre nuestros servicios, actualizaciones y novedades. 
+          En Tutv Mex trabajamos constantemente para ofrecerte la mejor experiencia de contenido digital y soporte eficiente.
+        </p>
+      </div>
+
+      <div class="bloque">
+        <h3>💡 Ayuda</h3>
+        <p>
+          Si tienes dudas o necesitas orientación, visita nuestras secciones de soporte o contáctanos directamente. 
+          Nuestro equipo está listo para ayudarte a resolver cualquier consulta de forma rápida y clara.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Nueva Sección Planes -->
+  <section class="planes" id="planes">
+    <h2>Planes</h2>
+    <img src="https://via.placeholder.com/900x400" alt="Imagen de planes">
+    <h3>Descubre Nuestros Planes</h3>
+    <p>
+      Conoce nuestras opciones diseñadas para adaptarse a tus necesidades. 
+      Ya sea para uso personal o familiar, Tutv Mex tiene un plan ideal para ti.
+      Pronto podrás consultar aquí los detalles y beneficios de cada paquete.
     </p>
   </section>
 
@@ -267,3 +361,5 @@
 
 </body>
 </html>
+
+
