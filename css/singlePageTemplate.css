@@ -1,7 +1,7 @@
 @charset "UTF-8";
 /* Body */
 body {
-	font-family: source-sans-pro;
+	
 	background-color: #f2f2f2;
 	margin-top: 0px;
 	margin-right: 0px;
@@ -9,6 +9,8 @@ body {
 	margin-left: 0px;
 	font-style: normal;
 	font-weight: 200;
+	font-family: Arial, Helvetica, sans-serif;
+	
 }
 /* Container */
 .container {
@@ -34,6 +36,7 @@ header {
 	margin-top: 15px;
 	margin-left: 25px;
 	letter-spacing: 4px;
+
 }
 nav {
 	float: right;
@@ -76,6 +79,7 @@ ul li:hover a {
 	background-color: #B3B3B3;
 	padding-top: 150px;
 	padding-bottom: 150px;
+	background-image: url("../images/placeholder.jpg");
 }
 .light {
 	font-weight: bold;
@@ -454,7 +458,7 @@ nav ul li {
 }
 
 /* Small Desktops */
-@media (min-width: 768px) and (max-width: 1096px) {
+@media ( min-width : 768px ) and (max-width : 1080px ){
 .text_column {
 	width: 100%;
 }

@@ -3,710 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tu Sitio Web Moderno</title>
+    <title>TuTV - Tu televisión sin limites</title>
     
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     
-    <style>
-        /* --- 1. Reseteo Básico y Estilos Generales --- */
-        html {
-            scroll-behavior: smooth;
-        }
-
-        :root {
-            --color-naranja: #E67E22;
-            --color-naranja-hover: #f39c12;
-            --color-texto: #333;
-            --color-fondo-oscuro: #2c3e50;
-            --header-altura: 83px;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Montserrat', Arial, sans-serif;
-            line-height: 1.7;
-            background-color: #f9f9f9;
-            color: var(--color-texto);
-            overflow-x: hidden;
-        }
-
-        .container {
-            width: 90%;
-            max-width: 1200px;
-            margin: auto;
-        }
-        
-        h1, h2, h3 {
-            font-weight: 700;
-            margin-bottom: 15px;
-            color: var(--color-fondo-oscuro);
-        }
-        
-        section {
-            padding: 60px 0;
-            background: #ffffff;
-            margin-bottom: 10px;
-            scroll-margin-top: var(--header-altura);
-        }
-
-        /* --- 2. Encabezado y Navegación --- */
-        header {
-            background: #ffffff;
-            color: var(--color-texto);
-            border-bottom: 3px solid var(--color-naranja);
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            min-height: var(--header-altura);
-            box-shadow: 0 2px 10px rgba(0,0,0,0.08); 
-        }
-        
-        header .container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            height: var(--header-altura);
-        }
-
-        header h1 {
-            margin-bottom: 0;
-            color: var(--color-naranja);
-            font-size: 1.8em;
-        }
-
-        header nav.main-nav ul {
-            list-style: none;
-            display: flex;
-        }
-
-        header nav.main-nav li {
-            padding: 0 15px;
-        }
-
-        header nav.main-nav a {
-            color: var(--color-texto);
-            text-decoration: none;
-            font-weight: 700;
-            transition: color 0.3s ease;
-        }
-
-        header nav.main-nav a:hover {
-            color: var(--color-naranja);
-        }
-
-        /* --- 3. Menú Hamburguesa --- */
-        .hamburger-menu {
-            display: none;
-            background: transparent;
-            border: none;
-            cursor: pointer;
-            padding: 10px;
-            z-index: 1001;
-        }
-
-        .hamburger-menu .bar {
-            display: block;
-            width: 25px;
-            height: 3px;
-            background-color: var(--color-texto);
-            margin: 5px auto;
-            transition: all 0.3s ease-in-out;
-        }
-
-        .hamburger-menu.is-active .bar:nth-child(1) {
-            transform: translateY(8px) rotate(45deg);
-        }
-        .hamburger-menu.is-active .bar:nth-child(2) {
-            opacity: 0;
-        }
-        .hamburger-menu.is-active .bar:nth-child(3) {
-            transform: translateY(-8px) rotate(-45deg);
-        }
-
-        /* --- 4. Sección "Hero" (Inicio) --- */
-        .hero {
-            background: #333;
-            color: #fff;
-            text-align: center;
-            padding: 100px 0;
-        }
-        .hero h2 { font-size: 3em; color: #fff; }
-        .hero p { font-size: 1.2em; margin-bottom: 30px; }
-        
-        .cta-button {
-            display: inline-block;
-            background: linear-gradient(to right, var(--color-naranja), var(--color-naranja-hover));
-            color: #fff;
-            padding: 14px 30px;
-            text-decoration: none;
-            border-radius: 50px;
-            font-weight: 700;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-            border: none;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-        
-        .cta-button:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 6px 15px rgba(0,0,0,0.2);
-        }
-
-        /* --- 5. Sección Información --- */
-        #info .container {
-            display: flex;
-            align-items: center;
-            gap: 30px;
-        }
-        #info .info-texto, #info .info-img { flex: 1; }
-        #info img { width: 100%; border-radius: 8px; }
-
-        /* --- 6. Banner de Streaming --- */
-        #streaming-banner {
-            background-color: #f9f9f9;
-            text-align: center;
-            padding: 50px 0;
-            overflow: hidden;
-        }
-
-        #streaming-banner h2 {
-            font-size: 2.2em;
-            max-width: 800px;
-            margin-left: auto;
-            margin-right: auto;
-            margin-bottom: 40px;
-        }
-
-        .logo-carousel-container {
-            width: 100%;
-            max-width: 900px;
-            margin: auto;
-            overflow: hidden;
-            position: relative;
-            -webkit-mask-image: linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%);
-            mask-image: linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%);
-        }
-
-        .logo-carousel-track {
-            display: flex;
-            width: calc(225px * 30);
-            animation: scroll 40s linear infinite;
-        }
-
-        .logo-item {
-            flex-shrink: 0;
-            width: 225px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 0 20px;
-            font-size: 3.5em;
-            color: #bbb;
-            user-select: none;
-            -webkit-user-select: none;
-            pointer-events: none;
-        }
-        
-        @keyframes scroll {
-            from { transform: translateX(0); }
-            to { transform: translateX(-50%); }
-        }
-
-        /* --- 7. Sección Planes --- */
-        #planes { background-color: #f9f9f9; }
-        #planes h2 { text-align: center; font-size: 2.5em; }
-        
-        .planes-container {
-            display: flex;
-            justify-content: center;
-            gap: 30px;
-            flex-wrap: wrap;
-        }
-        
-        .plan-card {
-            flex-basis: 350px;
-            max-width: 400px;
-            flex-grow: 0;
-            background: #fff;
-            border: 1px solid #eee;
-            border-radius: 8px;
-            padding: 30px;
-            text-align: center;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-        
-        .plan-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
-        }
-        .plan-card h3 { color: var(--color-naranja); font-size: 1.5em; }
-        .plan-card .precio { font-size: 2.5em; font-weight: 700; margin: 15px 0; }
-        .plan-card .precio span { font-size: 0.5em; font-weight: 400; color: #777; }
-        .plan-card ul { list-style: none; margin: 20px 0; color: #555; }
-        .plan-card li { margin-bottom: 10px; }
-
-        /* --- 8. Sección Soporte --- */
-        #soporte {
-            text-align: center;
-            background-color: #f9f9f9;
-        }
-
-        /* --- 9. NUEVO: Sección FAQ --- */
-        #faq {
-            background-color: #fff;
-        }
-        #faq h2 {
-            text-align: center;
-            font-size: 2.5em;
-        }
-        
-        .faq-container {
-            max-width: 800px;
-            margin: 30px auto 0 auto;
-        }
-
-        .faq-item {
-            border-bottom: 1px solid #eee;
-        }
-
-        .faq-toggle {
-            width: 100%;
-            background: none;
-            border: none;
-            text-align: left;
-            padding: 20px 0;
-            font-family: 'Montserrat', sans-serif;
-            font-size: 1.2em;
-            font-weight: 700;
-            color: var(--color-fondo-oscuro);
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            cursor: pointer;
-            transition: color 0.3s ease;
-        }
-
-        .faq-toggle:hover {
-            color: var(--color-naranja);
-        }
-
-        .faq-toggle i {
-            transition: transform 0.3s ease;
-            font-size: 0.9em;
-            color: var(--color-naranja);
-        }
-
-        .faq-toggle.is-active i {
-            transform: rotate(45deg);
-        }
-
-        .faq-content {
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.4s ease-out, padding 0.4s ease-out;
-            padding: 0 10px;
-            color: #555;
-            line-height: 1.6;
-        }
-
-        .faq-content.is-open {
-            max-height: 300px; /* Alto de la respuesta */
-            padding: 0 10px 20px 10px;
-        }
-        /* --- Fin de Estilos FAQ --- */
-
-
-        /* --- 10. Sección Manuales --- */
-        #manuales {
-            text-align: center;
-        }
-        #manuales p {
-            margin-bottom: 25px;
-        }
-
-        .manuales-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-            gap: 20px;
-            margin-bottom: 40px;
-        }
-
-        .manual-item {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            padding: 20px;
-            text-decoration: none;
-            color: var(--color-texto);
-            border-radius: 8px;
-            background: #f9f9f9;
-            border: 1px solid #eee;
-            transition: all 0.3s ease;
-            cursor: pointer;
-        }
-        
-        .manual-item:hover {
-            color: var(--color-naranja);
-            border-color: var(--color-naranja);
-            transform: translateY(-5px);
-            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
-        }
-
-        .manual-item i {
-            font-size: 3em;
-            margin-bottom: 15px;
-            color: var(--color-naranja);
-        }
-        
-        .manual-item h3 {
-            font-size: 1.1em;
-            margin-bottom: 0;
-            color: inherit;
-        }
-        
-        h3.manuales-aviso-titulo {
-            font-size: 1.8em;
-            color: var(--color-fondo-oscuro);
-            text-align: center;
-            margin-top: 30px;
-        }
-
-        p.manuales-aviso-texto {
-            font-size: 1.1em;
-            text-align: center;
-            max-width: 600px;
-            margin: 10px auto 30px auto;
-            color: #555;
-            line-height: 1.6;
-        }
-
-        .manuales-grid-small {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 25px;
-            max-width: 400px;
-            margin: 0 auto;
-        }
-
-        /* --- 11. Sección Contacto --- */
-        #contacto { 
-            text-align: center;
-            background-color: #f9f9f9;
-        }
-        #contacto p { font-size: 1.1em; margin-bottom: 30px; }
-        
-        form { margin-top: 30px; }
-        form input, form textarea {
-            width: 80%;
-            max-width: 500px;
-            padding: 12px;
-            margin-bottom: 10px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            font-family: 'Montserrat', sans-serif;
-        }
-
-        .social-icons {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-        }
-
-        .social-icon {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            text-decoration: none;
-            color: #fff;
-            font-size: 22px;
-            transition: all 0.3s ease;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.15);
-        }
-
-        .social-icon:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-        }
-        
-        .social-icon.whatsapp  { background-color: #25D366; }
-        .social-icon.facebook  { background-color: #1877F2; }
-        .social-icon.instagram { background-color: #E4405F; }
-        .social-icon.email     { background-color: #777; }
-
-        /* --- 12. Pie de Página --- */
-        footer {
-            background: var(--color-fondo-oscuro);
-            color: #fff;
-            text-align: center;
-            padding: 30px;
-            margin-top: 20px;
-        }
-        
-        /* --- 13. Estilos para los Modales --- */
-        .modal {
-            display: none;
-            position: fixed;
-            z-index: 1001;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            overflow: auto;
-            background-color: rgba(0,0,0,0.6);
-            align-items: center;
-            justify-content: center;
-        }
-
-        .modal.is-open {
-            display: flex;
-        }
-        
-        .modal-content {
-            background-color: #fff;
-            margin: auto;
-            border-radius: 8px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
-            width: 90%;
-            max-width: 600px;
-            position: relative;
-            text-align: left;
-            animation: fadeIn 0.3s ease;
-            overflow: hidden;
-        }
-        
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(-20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        .modal-close {
-            color: #aaa;
-            font-size: 28px;
-            font-weight: bold;
-            cursor: pointer;
-            transition: color 0.3s ease;
-        }
-        .modal-close:hover {
-            color: #333;
-        }
-        
-        .modal-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 20px 30px;
-            border-bottom: 1px solid #eee;
-            background: #fff;
-        }
-        
-        .modal-header h2 {
-            margin: 0;
-            font-size: 1.6em;
-            color: var(--color-naranja);
-        }
-        
-        .modal-body {
-            padding: 30px 30px 20px 30px;
-            max-height: 60vh;
-            overflow-y: auto;
-            background: #fdfdfd;
-        }
-
-        .step {
-            display: flex;
-            align-items: flex-start;
-            gap: 15px;
-            margin-bottom: 25px;
-        }
-
-        .step-number {
-            flex-shrink: 0;
-            width: 40px;
-            height: 40px;
-            background-color: var(--color-naranja);
-            color: #fff;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: 700;
-            font-size: 1.2em;
-        }
-
-        .step-content {
-            flex-grow: 1;
-        }
-
-        .step-content p {
-            margin: 0 0 15px 0;
-            line-height: 1.6;
-            font-size: 1.05em;
-        }
-        
-        .step-content img {
-            width: 100%;
-            height: auto;
-            border-radius: 5px;
-            border: 1px solid #eee;
-        }
-        /* --- Fin de Estilos de Modales --- */
-
-
-        /* --- 14. CSS para Animación de Scroll --- */
-        .fade-in {
-            opacity: 0;
-            transform: translateY(30px); 
-            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-        }
-        
-        .fade-in.is-visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        /* --- 15. DISEÑO ADAPTATIVO (Media Queries) --- */
-        
-        @media (max-width: 768px) {
-            
-            .hero h2 { font-size: 2.2em; }
-            
-            .hamburger-menu {
-                display: block;
-            }
-
-            header nav.main-nav {
-                position: fixed;
-                z-index: 1000;
-                top: var(--header-altura);
-                right: -100%;
-                width: 100%;
-                height: calc(100vh - var(--header-altura));
-                background: #ffffff;
-                box-shadow: -5px 0 15px rgba(0,0,0,0.1);
-                transition: right 0.3s ease-in-out;
-            }
-
-            header nav.main-nav.nav-active {
-                right: 0;
-            }
-
-            header nav.main-nav ul {
-                flex-direction: column;
-                padding-top: 20px;
-            }
-
-            header nav.main-nav li {
-                padding: 0;
-                width: 100%;
-            }
-
-            header nav.main-nav a {
-                display: block;
-                padding: 20px;
-                text-align: center;
-                border-bottom: 1px solid #f4f4f4;
-            }
-            
-            #info .container {
-                flex-direction: column;
-            }
-            
-            #streaming-banner h2 {
-                font-size: 1.8em;
-            }
-            .logo-carousel-container {
-                max-width: 100%;
-            }
-            .logo-item {
-                width: 130px;
-                font-size: 3em;
-            }
-            .logo-carousel-track {
-                width: calc(130px * 30);
-                animation-duration: 30s;
-            }
-
-            .planes-container {
-                flex-direction: column;
-                align-items: center;
-            }
-            
-            .plan-card {
-                margin-bottom: 20px;
-                flex-basis: auto;
-                width: 100%;
-            }
-            
-            form input, form textarea {
-                width: 100%;
-            }
-            
-            .manuales-grid {
-                grid-template-columns: repeat(3, 1fr);
-                margin-bottom: 20px;
-            }
-            
-            .manuales-grid-small {
-                grid-template-columns: repeat(2, 1fr);
-                max-width: none;
-                width: 100%;
-            }
-            
-            .manual-item h3 {
-                font-size: 1em;
-            }
-            
-            .modal-content {
-                width: 95%;
-            }
-            .modal-header {
-                padding: 15px 20px;
-            }
-            .modal-header h2 {
-                font-size: 1.3em;
-            }
-            .modal-body {
-                padding: 20px;
-                max-height: 70vh;
-            }
-            .step {
-                gap: 10px;
-            }
-            .step-number {
-                width: 35px;
-                height: 35px;
-                font-size: 1em;
-            }
-            
-            .faq-toggle {
-                font-size: 1.1em;
-            }
-        }
-
-        @media (max-width: 400px) {
-            .manuales-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/simple-icons-font@v11/font/simple-icons.min.css">
+    
+    <link rel="stylesheet" href="css/styles.css">
     
 </head>
 <body>
 
     <header>
         <div class="container">
-            <h1>TuMarca</h1>
+            <h1>TuTV</h1>
             
             <nav class="main-nav">
                 <ul>
@@ -714,8 +25,6 @@
                     <li><a href="#info">Información</a></li>
                     <li><a href="#planes">Planes</a></li>
                     <li><a href="#soporte">Soporte</a></li>
-                    <li><a href="#faq">FAQ</a></li>
-                    <li><a href="#manuales">Manuales</a></li>
                     <li><a href="#contacto">Contacto</a></li>
                 </ul>
             </nav>
@@ -733,8 +42,8 @@
         
         <section id="inicio" class="hero">
             <div class="container">
-                <h2>El Futuro es Ahora</h2>
-                <p>Descubre soluciones innovadoras para tu vida digital.</p>
+                <h2>TuTV</h2>
+                <p>Todo tu entretenimiento en un solo lugar.</p>
                 <a href="#planes" class="cta-button">Ver Planes</a>
             </div>
         </section>
@@ -742,83 +51,102 @@
         <section id="info">
             <div class="container fade-in">
                 <div class="info-texto">
-                    <h2>¿Qué Hacemos?</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum.</p>
-                    <p>Praesent mauris. Fusce nec tellus sed augue semper porta. Mauris massa. Vestibulum lacinia arcu eget nulla.</p>
+                    <h2>¡Bienvenido a TuTv!</h2>
+                    <p>Más de <strong>2,000 canales, películas, series y deportes</strong> en un solo lugar.
+                        Disfruta tu contenido favorito cuando quieras y donde quieras, sin complicaciones ni instalaciones difíciles.</p><br>
+                    <p>Con TuTv, el entretenimiento siempre va contigo. 🚀</p>    
                 </div>
                 <div class="info-img">
-                    <img src="https://via.placeholder.com/500x300.png?text=Imagen+Moderna" alt="Descripción de la imagen informativa">
+                    <img src="images/bkgnd_00.png" alt="Descripción de la imagen informativa">
                 </div>
             </div>
+            
         </section>
-
+        
         <section id="streaming-banner">
             <div class="container fade-in">
                 <h2>Todo el contenido de tus plataformas favoritas y canales en vivo en un solo lugar</h2>
                 
                 <div class="logo-carousel-container">
                     <div class="logo-carousel-track">
-                        <div class="logo-item"><i class="fab fa-netflix"></i></div>
-                        <div class="logo-item"><i class="fab fa-youtube"></i></div>
-                        <div class="logo-item"><i class="fab fa-spotify"></i></div>
-                        <div class="logo-item"><i class="fab fa-amazon"></i></div>
-                        <div class="logo-item"><i class="fab fa-apple"></i></div>
-                        <div class="logo-item"><i class="fab fa-playstation"></i></div>
-                        <div class="logo-item"><i class="fab fa-xbox"></i></div>
-                        <div class="logo-item"><i class="fab fa-twitch"></i></div>
-                        <div class="logo-item"><i class="fab fa-vimeo-v"></i></div>
-                        <div class="logo-item"><i class="fas fa-film"></i></div>
-                        <div class="logo-item"><i class="fas fa-h"></i></div>
-                        <div class="logo-item"><i class="fas fa-star"></i></div>
-                        <div class="logo-item"><i class="fas fa-p"></i></div>
-                        <div class="logo-item"><i class="fas fa-rocket"></i></div>
-                        <div class="logo-item"><i class="fas fa-tv"></i></div>
-                        
-                        <div class="logo-item"><i class="fab fa-netflix"></i></div>
-                        <div class="logo-item"><i class="fab fa-youtube"></i></div>
-                        <div class="logo-item"><i class="fab fa-spotify"></i></div>
-                        <div class="logo-item"><i class="fab fa-amazon"></i></div>
-                        <div class="logo-item"><i class="fab fa-apple"></i></div>
-                        <div class="logo-item"><i class="fab fa-playstation"></i></div>
-                        <div class="logo-item"><i class="fab fa-xbox"></i></div>
-                        <div class="logo-item"><i class="fab fa-twitch"></i></div>
-                        <div class="logo-item"><i class="fab fa-vimeo-v"></i></div>
-                        <div class="logo-item"><i class="fas fa-film"></i></div>
-                        <div class="logo-item"><i class="fas fa-h"></i></div>
-                        <div class="logo-item"><i class="fas fa-star"></i></div>
-                        <div class="logo-item"><i class="fas fa-p"></i></div>
-                        <div class="logo-item"><i class="fas fa-rocket"></i></div>
-                        <div class="logo-item"><i class="fas fa-tv"></i></div>
+                        <div class="logo-item"><img src="images/banner/netflix.png" alt="Netflix"></div>
+                        <div class="logo-item"><img src="images/banner/hbomax.png" alt="YouTube"></div>
+                        <div class="logo-item"><img src="images/banner/vix.png" alt="Spotify"></div>
+                        <div class="logo-item"><img src="images/banner/disney.png" alt="Prime Video"></div>
+                        <div class="logo-item"><img src="images/banner/espn.png" alt="Disney+"></div>
+                        <div class="logo-item"><img src="images/banner/mubi.png" alt="HBO Max"></div>
+                        <div class="logo-item"><img src="images/banner/prime.png" alt="Star+"></div>
+                        <div class="logo-item"><img src="images/banner/paramount.png" alt="Paramount+"></div>
+                        <div class="logo-item"><img src="images/banner/champions.png" alt="Apple TV+"></div>
+                        <div class="logo-item"><img src="images/banner/fx.png" alt="Crunchyroll"></div>
+                        <div class="logo-item"><img src="images/banner/nfl.png" alt="Vix"></div>
+                        <div class="logo-item"><img src="images/banner/ligamx.png" alt="Twitch"></div>
+                        <div class="logo-item"><img src="images/banner/dazn.png" alt="Pluto TV"></div>
+                        <div class="logo-item"><img src="images/banner/f1.png" alt="Hulu"></div>
+                        <div class="logo-item"><img src="images/banner/crunchy.png" alt="Vimeo"></div>                    
+                        <div class="logo-item"><img src="images/banner/24-7.png" alt="Vimeo"></div>  
+                        <div class="logo-item"><img src="images/banner/ppv.png" alt="Vimeo"></div>  
+                        <div class="logo-item"><img src="images/banner/xxx.png" alt="Vimeo"></div>  
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="info">
+            <div class="container fade-in">
+                <div class="info-img">
+                    <img src="images/bkgnd_01.png" alt="Descripción de la imagen informativa">
+                </div>
+                <div class="info-texto">
+                    <h2>Confianza TuTV</h2>
+                    <p>Con TuTv tienes acceso a soporte rápido y confiable. Si tienes cualquier problema con la instalación o el servicio, te ayudamos paso a paso hasta que todo funcione perfecto.</p> 
+                </div>
+
+            </div>
+            
+        </section>        
+
+        <section id="planes">
+            <div class="container fade-in">
+                <h2>Nuestros Planes</h2>
+                <div class="planes-container">
+                    <div class="plan-card">
+                        <h3>Plan Básico</h3>
+                        <div class="precio">$150<span>/mes</span></div>
+                        <ul>
+                            <li>1 dispositivo</li>
+                            <li>+ 40,000 peliculas y series</li>
+                            <li>+ 3,000 canales en vivo</li>
+                        </ul>
+                        <a href="#contacto" class="cta-button">Elegir Plan</a>
+                    </div>
+                    <div class="plan-card">
+                        <h3>Plan Plus</h3>
+                        <div class="precio">$250 <span>/mes</span></div>
+                        <ul>
+                            <li>3 Dispositivos</li>
+                            <li>+ 40,000 peliculas y series</li>
+                            <li>+ 3,000 canales en vivo</li>
+                        </ul>
+                        <a href="#contacto" class="cta-button">Elegir Plan</a>
                     </div>
                 </div>
             </div>
         </section>
 
+
         <section id="planes">
             <div class="container fade-in">
-                <h2>Nuestros Planes</h2>
-                
+                <h2>Solicita tu demo</h2>
                 <div class="planes-container">
                     <div class="plan-card">
-                        <h3>Plan Básico</h3>
-                        <div class="precio">$10 <span>/mes</span></div>
+                        <h3>Solicita tu DEMO</h3>
+                        <div class="precio">$0<span>/mes</span></div>
                         <ul>
-                            <li>Característica 1</li>
-                            <li>Característica 2</li>
-                            <li>Soporte Básico</li>
+                            <li>3 horas</li>
+                            <li>+ 40,000 peliculas y series</li>
+                            <li>+ 3,000 canales en vivo</li>
                         </ul>
-                        <a href="#contacto" class="cta-button">Elegir Plan</a>
-                    </div>
-                    
-                    <div class="plan-card">
-                        <h3>Plan Empresa</h3>
-                        <div class="precio">$50 <span>/mes</span></div>
-                        <ul>
-                            <li>Todas las Características</li>
-                            <li>Soporte 24/7</li>
-                            <li>Gerente de Cuenta</li>
-                        </ul>
-                        <a href="#contacto" class="cta-button">Elegir Plan</a>
+                        <a href="#contacto" class="cta-button">Pide tu DEMO</a>
                     </div>
                 </div>
             </div>
@@ -827,63 +155,60 @@
         <section id="soporte">
             <div class="container fade-in">
                 <h2>Soporte al Cliente</h2>
-                <p>¿Tienes preguntas? Estamos aquí para ayudarte. Visita nuestra sección de preguntas frecuentes o envíanos un mensaje.</p>
-                <a href="#" class="cta-button">Ver Preguntas Frecuentes</a>
+                <p>¿Tienes preguntas? Estamos aquí para ayudarte.</p>
+                <!--a href="#faq" class="cta-button">Ver Preguntas Frecuentes</a-->
             </div>
         </section>
 
         <section id="faq">
             <div class="container fade-in">
                 <h2>Preguntas Frecuentes</h2>
-                
                 <div class="faq-container">
                     <div class="faq-item">
-                        <button type="button" class="faq-toggle">
-                            ¿Qué es [TuMarca]?
-                            <i class="fas fa-plus"></i>
-                        </button>
+                        <button type="button" class="faq-toggle">¿Qué necesito para mi instalación?<i class="fas fa-plus"></i></button>
                         <div class="faq-content">
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam.</p>
+                            <p><strong>TuTV</strong> te ofrece una instalación sencilla y rápida. Puedes hacerlo de tres maneras:</p><br>
+                            <p>🔹 <strong>Guía remota:</strong> Te guiamos paso a paso para activar TuTv en tu dispositivo.</p>
+                            <p>🔹 <strong>Consulta nuestros manuales:</strong> Accede a las guías disponibles según tu modelo de TV o sistema.</p>
+                            <p>🔹 <strong>Instalación a domicilio:</strong> Si lo prefieres, un técnico puede acudir a tu ubicación por un costo de $200 MXN.</p>
+                            
                         </div>
                     </div>
-                    
                     <div class="faq-item">
-                        <button type="button" class="faq-toggle">
-                            ¿Cómo puedo contratar un plan?
-                            <i class="fas fa-plus"></i>
-                        </button>
+                        <button type="button" class="faq-toggle">¿Qué dispositivos puedo usar con TuTv?<i class="fas fa-plus"></i></button>
                         <div class="faq-content">
-                            <p>Puedes contratar un plan directamente desde nuestra sección de <a href="#planes">Planes</a> o contactándonos a través de nuestro formulario en la sección de <a href="#contacto">Contacto</a>.</p>
+                            <p>TuTv es compatible con prácticamente cualquier equipo con acceso a Internet:</p><br>
+                            <p>📱 Celulares y tablets</p>
+                            <p>💻 Computadoras y laptops (PC y Mac)</p>
+                            <p>📺 Smart TVs</p>
+                            <p>🎮 TV Box y dispositivos de streaming (como Roku, Fire Stick, Chromecast, entre otros)</p>
                         </div>
                     </div>
-                    
                     <div class="faq-item">
-                        <button type="button" class="faq-toggle">
-                            ¿En cuántos dispositivos puedo usar el servicio?
-                            <i class="fas fa-plus"></i>
-                        </button>
+                        <button type="button" class="faq-toggle">¿Qué sistemas operativos son compatibles?<i class="fas fa-plus"></i></button>
                         <div class="faq-content">
-                            <p>Depende del plan que elijas. Nuestro Plan Básico permite 2 dispositivos simultáneos, mientras que el Plan Empresa permite hasta 5.</p>
+                            <p>TuTv funciona en la mayoría de sistemas modernos, incluyendo:</p><br>
+                            <p>🔹 Android y iOS (para celulares y tablets)</p>
+                            <p>🔹 Windows y MacOS (para computadoras)</p>
+                            <p>🔹 WebOS, Tizen y Vidaa (para Smart TVs de marcas como LG, Samsung e Hisense)</p>
                         </div>
                     </div>
-                    
                     <div class="faq-item">
-                        <button type="button" class="faq-toggle">
-                            ¿Qué métodos de pago aceptan?
-                            <i class="fas fa-plus"></i>
-                        </button>
+                        <button type="button" class="faq-toggle"> ¿Qué tipo de contenido puedo disfrutar en TuTv?<i class="fas fa-plus"></i></button>
                         <div class="faq-content">
-                            <p>Aceptamos tarjetas de crédito/débito (Visa, Mastercard, AMEX) y transferencias bancarias.</p>
+                            <p>Con TuTv tienes acceso a más de 2,000 canales de televisión en vivo y todo tu contenido de plataformas de entretenimiento:</p><br>
+                            <p>🎬 Películas, 📺 series, 🏟️ deportes, 👩🏻‍🎤 eventos , 📰 noticias, 🎵 música y mucho más.</p>
+                            <p>Todo desde un solo lugar, sin cables, sin límites.</p>
                         </div>
                     </div>
-                    
                     <div class="faq-item">
-                        <button type="button" class="faq-toggle">
-                            ¿Existe un periodo de prueba?
-                            <i class="fas fa-plus"></i>
-                        </button>
+                        <button type="button" class="faq-toggle">¿Cómo puedo contactarlos?<i class="fas fa-plus"></i></button>
                         <div class="faq-content">
-                            <p>¡Sí! Ofrecemos un periodo de prueba gratuito de 3 días para todos los planes nuevos. Contáctanos para activarlo.</p>
+                            <p>Fácil:</p><br>
+                            <p>✅ Envíanos un mensaje directo por Facebook</p>
+                            <p>✅ Escríbenos por WhatsApp al [número de contacto]</p>
+                            <p>✅ O entra a nuestro sitio web y haz clic en el botón “Hablar por WhatsApp” para asistencia inmediata.</p>
+
                         </div>
                     </div>
                 </div>
@@ -893,53 +218,21 @@
         <section id="manuales">
             <div class="container fade-in">
                 <h2>Manuales de Instalación</h2>
-                <p>Guías paso a paso para configurar tu servicio en cualquier dispositivo.</p>
-                
+                <p>Guías paso a paso para configurar tu servicio.</p>
                 <div class="manuales-grid">
-                    <div class="manual-item modal-trigger" data-target="modal-android">
-                        <i class="fab fa-android"></i>
-                        <h3>Android</h3>
-                    </div>
-                    <div class="manual-item modal-trigger" data-target="modal-ios">
-                        <i class="fab fa-apple"></i>
-                        <h3>iOS</h3>
-                    </div>
-                    <div class="manual-item modal-trigger" data-target="modal-firetv">
-                        <i class="fab fa-amazon"></i>
-                        <h3>FireTV</h3>
-                    </div>
-                    <div class="manual-item modal-trigger" data-target="modal-samsung">
-                        <i class="fas fa-tv"></i>
-                        <h3>Samsung</h3>
-                    </div>
-                    <div class="manual-item modal-trigger" data-target="modal-lg">
-                        <i class="fas fa-tv"></i>
-                        <h3>LG</h3>
-                    </div>
-                    <div class="manual-item modal-trigger" data-target="modal-hisense">
-                        <i class="fas fa-tv"></i>
-                        <h3>Hisense</h3>
-                    </div>
-                    <div class="manual-item modal-trigger" data-target="modal-web">
-                        <i class="fas fa-globe"></i>
-                        <h3>Web</h3>
-                    </div>
+                    <div class="manual-item modal-trigger" data-target="modal-android"><i class="si si-android"></i><h3>Android</h3></div>
+                    <div class="manual-item modal-trigger" data-target="modal-ios"><i class="si si-apple"></i><h3>iOS</h3></div>
+                    <div class="manual-item modal-trigger" data-target="modal-firetv"><i class="si si-amazonfiretv"></i><h3>FireTV</h3></div>
+                    <div class="manual-item modal-trigger" data-target="modal-samsung"><i class="si si-samsung"></i><h3>Samsung</h3></div>
+                    <div class="manual-item modal-trigger" data-target="modal-lg"><i class="si si-lg"></i><h3>LG</h3></div>
+                    <div class="manual-item modal-trigger" data-target="modal-web"><i class="si si-googlechrome"></i><h3>Web</h3></div>
+                    <div class="manual-item modal-trigger" data-target="modal-hisense"><i class="si si-hisense"></i><h3>Hisense</h3></div>
                 </div>
-
-                <h3 class="manuales-aviso-titulo">Para dispositivos ROKU y Apple TV</h3>
-                <p class="manuales-aviso-texto">
-                    Por temas ajenos a nuestro servicio, en estos dispositivos se necesita comprar la aplicación por aparte.
-                </p>
-
+                <h2 class="manuales-aviso-titulo">Para ROKU y Apple TV</h2>
+                <p class="manuales-aviso-texto">Por temas ajenos a nuestro servicio, en estos dispositivos se necesita comprar la aplicación por aparte.</p>
                 <div class="manuales-grid-small">
-                    <div class="manual-item modal-trigger" data-target="modal-roku">
-                        <i class="fas fa-tv"></i>
-                        <h3>Roku</h3>
-                    </div>
-                    <div class="manual-item modal-trigger" data-target="modal-apple-tv">
-                        <i class="fab fa-apple"></i>
-                        <h3>Apple TV</h3>
-                    </div>
+                    <div class="manual-item modal-trigger" data-target="modal-roku"><i class="si si-roku"></i><h3>Roku</h3></div>
+                    <div class="manual-item modal-trigger" data-target="modal-apple-tv"><i class="si si-appletv"></i><h3>Apple TV</h3></div>
                 </div>
             </div>
         </section>
@@ -949,17 +242,12 @@
                 <h2>Contacto</h2>
                 <p>Envíanos un mensaje o encuéntranos en nuestras redes:</p>
                 <div class="social-icons">
-                    <a href="https... " target="_blank" class="social-icon whatsapp" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
-                    <a href="https... " target="_blank" class="social-icon facebook" title="Facebook"><i class="fab fa-facebook-f"></i></a>
-                    <a href="https... " target="_blank" class="social-icon instagram" title="Instagram"><i class="fab fa-instagram"></i></a>
-                    <a href="mailto..." class="social-icon email" title="Email"><i class="fas fa-envelope"></i></a>
+                    <a href="#" target="_blank" class="social-icon whatsapp" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                    <a href="#" target="_blank" class="social-icon facebook" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" target="_blank" class="social-icon instagram" title="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="social-icon email" title="Email"><i class="fas fa-envelope"></i></a>
                 </div>
-                <form action="#">
-                    <input type="text" name="nombre" placeholder="Tu Nombre" required>
-                    <input type="email" name="email" placeholder="Tu Email" required>
-                    <textarea name="mensaje" rows="5" placeholder="Tu Mensaje" required></textarea>
-                    <button type="submit" class="cta-button">Enviar Mensaje</button>
-                </form>
+
             </div>
         </section>
 
@@ -967,21 +255,21 @@
 
     <footer>
         <div class="container">
-            <p>&copy; 2025 TuMarca. Todos los derechos reservados.</p>
+            <p>&copy; 2025 TuTV. Todos los derechos reservados.</p>
         </div>
     </footer>
     
     <div id="modal-android" class="modal">
         <div class="modal-content">
             <div class="modal-header">
-                <h2><i class="fab fa-android"></i> Manual de Android</h2>
+                <h2><i class="si si-android"></i> Manual de Android</h2>
                 <span class="modal-close">&times;</span>
             </div>
             <div class="modal-body">
                 <div class="step">
                     <div class="step-number">1</div>
                     <div class="step-content">
-                        <p>Abre <strong>Google Play Store</strong>...</p>
+                        <p>Descargue de aquí </p>
                         <img src="https://via.placeholder.com/500x250.png?text=Imagen+Paso+1" alt="Paso 1">
                     </div>
                 </div>
@@ -1013,14 +301,34 @@
     <div id="modal-ios" class="modal">
         <div class="modal-content">
             <div class="modal-header">
-                <h2><i class="fab fa-apple"></i> Manual de iOS</h2>
+                <h2><i class="si si-apple"></i> Manual de iOS</h2>
                 <span class="modal-close">&times;</span>
             </div>
             <div class="modal-body">
-                <div class="step"><div class="step-number">1</div><div class="step-content"><p>Paso 1 para iOS...</p><img src="https://via.placeholder.com/500x250.png?text=Paso+1+iOS" alt="Paso 1"></div></div>
-                <div class="step"><div class="step-number">2</div><div class="step-content"><p>Paso 2 para iOS...</p><img src="https://via.placeholder.com/500x250.png?text=Paso+2+iOS" alt="Paso 2"></div></div>
-                <div class="step"><div class="step-number">3</div><div class="step-content"><p>Paso 3 para iOS...</p><img src="https://via.placeholder.com/500x250.png?text=Paso+3+iOS" alt="Paso 3"></div></div>
-                <div class="step"><div class="step-number">4</div><div class="step-content"><p>Paso 4 para iOS...</p><img src="https://via.placeholder.com/500x250.png?text=Paso+4+iOS" alt="Paso 4"></div></div>
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <p>Paso 1 para iOS...</p>
+                        <img src="https://via.placeholder.com/500x250.png?text=Paso+1+iOS" alt="Paso 1"></div>
+                    </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <p>Paso 2 para iOS...</p>
+                        <img src="https://via.placeholder.com/500x250.png?text=Paso+2+iOS" alt="Paso 2"></div>
+                    </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <p>Paso 3 para iOS...</p>
+                        <img src="https://via.placeholder.com/500x250.png?text=Paso+3+iOS" alt="Paso 3"></div>
+                    </div>
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <div class="step-content">
+                        <p>Paso 4 para iOS...</p>
+                        <img src="https://via.placeholder.com/500x250.png?text=Paso+4+iOS" alt="Paso 4"></div>
+                    </div>
             </div>
         </div>
     </div>
@@ -1028,14 +336,31 @@
     <div id="modal-firetv" class="modal">
         <div class="modal-content">
             <div class="modal-header">
-                <h2><i class="fab fa-amazon"></i> Manual de FireTV</h2>
+                <h2><i class="si si-amazonfiretv"></i> Manual de FireTV</h2>
                 <span class="modal-close">&times;</span>
             </div>
             <div class="modal-body">
-                <div class="step"><div class="step-number">1</div><div class="step-content"><p>Paso 1 para FireTV...</p><img src="https://via.placeholder.com/500x250.png?text=Paso+1+FireTV" alt="Paso 1"></div></div>
-                <div class="step"><div class="step-number">2</div><div class="step-content"><p>Paso 2 para FireTV...</p><img src="https://via.placeholder.com/500x250.png?text=Paso+2+FireTV" alt="Paso 2"></div></div>
-                <div class="step"><div class="step-number">3</div><div class="step-content"><p>Paso 3 para FireTV...</p><img src="https://via.placeholder.com/500x250.png?text=Paso+3+FireTV" alt="Paso 3"></div></div>
-                <div class="step"><div class="step-number">4</div><div class="step-content"><p>Paso 4 para FireTV...</p><img src="https://via.placeholder.com/500x250.png?text=Paso+4+FireTV" alt="Paso 4"></div></div>
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <p>Paso 1 para FireTV...</p>
+                        <img src="https://via.placeholder.com/500x250.png?text=Paso+1+FireTV" alt="Paso 1"></div>
+                    </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <div class="step-content"><p>Paso 2 para FireTV...</p>
+                        <img src="https://via.placeholder.com/500x250.png?text=Paso+2+FireTV" alt="Paso 2"></div>
+                    </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <div class="step-content"><p>Paso 3 para FireTV...</p>
+                        <img src="https://via.placeholder.com/500x250.png?text=Paso+3+FireTV" alt="Paso 3"></div>
+                    </div>
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <div class="step-content"><p>Paso 4 para FireTV...</p>
+                        <img src="https://via.placeholder.com/500x250.png?text=Paso+4+FireTV" alt="Paso 4"></div>
+                    </div>
             </div>
         </div>
     </div>
@@ -1043,14 +368,34 @@
     <div id="modal-samsung" class="modal">
         <div class="modal-content">
             <div class="modal-header">
-                <h2><i class="fas fa-tv"></i> Manual de Samsung</h2>
+                <h2><i class="si si-samsung"></i> Manual de Samsung</h2>
                 <span class="modal-close">&times;</span>
             </div>
             <div class="modal-body">
-                <div class="step"><div class="step-number">1</div><div class="step-content"><p>Paso 1 para Samsung...</p><img src="https://via.placeholder.com/500x250.png?text=Paso+1+Samsung" alt="Paso 1"></div></div>
-                <div class="step"><div class="step-number">2</div><div class="step-content"><p>Paso 2 para Samsung...</p><img src="https://via.placeholder.com/500x250.png?text=Paso+2+Samsung" alt="Paso 2"></div></div>
-                <div class="step"><div class="step-number">3</div><div class="step-content"><p>Paso 3 para Samsung...</p><img src="https://via.placeholder.com/500x250.png?text=Paso+3+Samsung" alt="Paso 3"></div></div>
-                <div class="step"><div class="step-number">4</div><div class="step-content"><p>Paso 4 para Samsung...</p><img src="https://via.placeholder.com/500x250.png?text=Paso+4+Samsung" alt="Paso 4"></div></div>
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <p>Paso 1 para Samsung...</p>
+                        <img src="images/guide/samsung/sam_guide_00.png" alt="Paso 1"></div>
+                    </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <p>Paso 2 para Samsung...</p>
+                        <img src="images/guide/samsung/sam_guide_01.png" alt="Paso 2"></div>
+                    </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <p>Paso 3 para Samsung...</p>
+                        <img src="https://via.placeholder.com/500x250.png?text=Paso+3+Samsung" alt="Paso 3"></div>
+                    </div>
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <div class="step-content">
+                        <p>Paso 4 para Samsung...</p>
+                        <img src="https://via.placeholder.com/500x250.png?text=Paso+4+Samsung" alt="Paso 4"></div>
+                    </div>
             </div>
         </div>
     </div>
@@ -1058,14 +403,34 @@
     <div id="modal-lg" class="modal">
         <div class="modal-content">
             <div class="modal-header">
-                <h2><i class="fas fa-tv"></i> Manual de LG</h2>
+                <h2><i class="si si-lg"></i> Manual de LG</h2>
                 <span class="modal-close">&times;</span>
             </div>
             <div class="modal-body">
-                <div class="step"><div class="step-number">1</div><div class="step-content"><p>Paso 1 para LG...</p><img src="https://via.placeholder.com/500x250.png?text=Paso+1+LG" alt="Paso 1"></div></div>
-                <div class="step"><div class="step-number">2</div><div class="step-content"><p>Paso 2 para LG...</p><img src="https://via.placeholder.com/500x250.png?text=Paso+2+LG" alt="Paso 2"></div></div>
-                <div class="step"><div class="step-number">3</div><div class="step-content"><p>Paso 3 para LG...</p><img src="https://via.placeholder.com/500x250.png?text=Paso+3+LG" alt="Paso 3"></div></div>
-                <div class="step"><div class="step-number">4</div><div class="step-content"><p>Paso 4 para LG...</p><img src="https://via.placeholder.com/500x250.png?text=Paso+4+LG" alt="Paso 4"></div></div>
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <p>Paso 1 para LG...</p>
+                        <img src="https://via.placeholder.com/500x250.png?text=Paso+1+LG" alt="Paso 1"></div>
+                    </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <p>Paso 2 para LG...</p>
+                        <img src="https://via.placeholder.com/500x250.png?text=Paso+2+LG" alt="Paso 2"></div>
+                    </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <p>Paso 3 para LG...</p>
+                        <img src="https://via.placeholder.com/500x250.png?text=Paso+3+LG" alt="Paso 3"></div>
+                    </div>
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <div class="step-content">
+                        <p>Paso 4 para LG...</p>
+                        <img src="https://via.placeholder.com/500x250.png?text=Paso+4+LG" alt="Paso 4"></div>
+                    </div>
             </div>
         </div>
     </div>
@@ -1073,14 +438,34 @@
     <div id="modal-hisense" class="modal">
         <div class="modal-content">
             <div class="modal-header">
-                <h2><i class="fas fa-tv"></i> Manual de Hisense</h2>
+                <h2><i class="si si-hisense"></i> Manual de Hisense</h2>
                 <span class="modal-close">&times;</span>
             </div>
             <div class="modal-body">
-                <div class="step"><div class="step-number">1</div><div class="step-content"><p>Paso 1 para Hisense...</p><img src="https://via.placeholder.com/500x250.png?text=Paso+1+Hisense" alt="Paso 1"></div></div>
-                <div class="step"><div class="step-number">2</div><div class="step-content"><p>Paso 2 para Hisense...</p><img src="https://via.placeholder.com/500x250.png?text=Paso+2+Hisense" alt="Paso 2"></div></div>
-                <div class="step"><div class="step-number">3</div><div class="step-content"><p>Paso 3 para Hisense...</p><img src="https://via.placeholder.com/500x250.png?text=Paso+3+Hisense" alt="Paso 3"></div></div>
-                <div class="step"><div class="step-number">4</div><div class="step-content"><p>Paso 4 para Hisense...</p><img src="https://via.placeholder.com/500x250.png?text=Paso+4+Hisense" alt="Paso 4"></div></div>
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <p>Paso 1 para Hisense...</p>
+                        <img src="https://via.placeholder.com/500x250.png?text=Paso+1+Hisense" alt="Paso 1"></div>
+                    </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <p>Paso 2 para Hisense...</p>
+                        <img src="https://via.placeholder.com/500x250.png?text=Paso+2+Hisense" alt="Paso 2"></div>
+                    </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <p>Paso 3 para Hisense...</p>
+                        <img src="https://via.placeholder.com/500x250.png?text=Paso+3+Hisense" alt="Paso 3"></div>
+                    </div>
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <div class="step-content">
+                        <p>Paso 4 para Hisense...</p>
+                        <img src="https://via.placeholder.com/500x250.png?text=Paso+4+Hisense" alt="Paso 4"></div>
+                    </div>
             </div>
         </div>
     </div>
@@ -1088,14 +473,34 @@
     <div id="modal-web" class="modal">
         <div class="modal-content">
             <div class="modal-header">
-                <h2><i class="fas fa-globe"></i> Manual de Web</h2>
+                <h2><i class="si si-googlechrome"></i> Manual de Web</h2>
                 <span class="modal-close">&times;</span>
             </div>
             <div class="modal-body">
-                <div class="step"><div class="step-number">1</div><div class="step-content"><p>Paso 1 para Web...</p><img src="https://via.placeholder.com/500x250.png?text=Paso+1+Web" alt="Paso 1"></div></div>
-                <div class="step"><div class="step-number">2</div><div class="step-content"><p>Paso 2 para Web...</p><img src="https://via.placeholder.com/500x250.png?text=Paso+2+Web" alt="Paso 2"></div></div>
-                <div class="step"><div class="step-number">3</div><div class="step-content"><p>Paso 3 para Web...</p><img src="https://via.placeholder.com/500x250.png?text=Paso+3+Web" alt="Paso 3"></div></div>
-                <div class="step"><div class="step-number">4</div><div class="step-content"><p>Paso 4 para Web...</p><img src="https://via.placeholder.com/500x250.png?text=Paso+4+Web" alt="Paso 4"></div></div>
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <p>Paso 1 para Web...</p>
+                        <img src="https://via.placeholder.com/500x250.png?text=Paso+1+Web" alt="Paso 1"></div>
+                    </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <p>Paso 2 para Web...</p>
+                        <img src="https://via.placeholder.com/500x250.png?text=Paso+2+Web" alt="Paso 2"></div>
+                    </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <p>Paso 3 para Web...</p>
+                        <img src="https://via.placeholder.com/500x250.png?text=Paso+3+Web" alt="Paso 3"></div>
+                    </div>
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <div class="step-content">
+                        <p>Paso 4 para Web...</p>
+                        <img src="https://via.placeholder.com/500x250.png?text=Paso+4+Web" alt="Paso 4"></div>
+                    </div>
             </div>
         </div>
     </div>
@@ -1103,7 +508,7 @@
     <div id="modal-roku" class="modal">
         <div class="modal-content">
             <div class="modal-header">
-                <h2><i class="fas fa-tv"></i> Información de Roku</h2>
+                <h2><i class="si si-roku"></i> Información de Roku</h2>
                 <span class="modal-close">&times;</span>
             </div>
             <div class="modal-body">
@@ -1116,7 +521,7 @@
     <div id="modal-apple-tv" class="modal">
         <div class="modal-content">
             <div class="modal-header">
-                <h2><i class="fab fa-apple"></i> Información de Apple TV</h2>
+                <h2><i class="si si-appletv"></i> Información de Apple TV</h2>
                 <span class="modal-close">&times;</span>
             </div>
             <div class="modal-body">
@@ -1125,97 +530,16 @@
             </div>
         </div>
     </div>
+
+    <a href="https://wa.me/521XXXXXXXXXX?text=Hola%2C%20me%20gustaría%20obtener%20más%20información." 
+       class="whatsapp-float" 
+       target="_blank" 
+       rel="noopener noreferrer"
+       aria-label="Contactar por WhatsApp">
+        <i class="si si-whatsapp"></i>
+    </a>
     
-
-    <script>
-        // --- Código para el Menú Hamburguesa ---
-        const hamburger = document.querySelector('.hamburger-menu');
-        const navMenu = document.querySelector('.main-nav');
-
-        hamburger.addEventListener('click', () => {
-            hamburger.classList.toggle('is-active');
-            navMenu.classList.toggle('nav-active');
-        });
-
-        const navLinks = document.querySelectorAll('.main-nav a');
-
-        function closeMenu() {
-            hamburger.classList.remove('is-active');
-            navMenu.classList.remove('nav-active');
-        }
-
-        navLinks.forEach(link => {
-            link.addEventListener('click', closeMenu);
-        });
-        
-        // --- Lógica para Modales ---
-        const modalTriggers = document.querySelectorAll('.modal-trigger');
-        const modalCloses = document.querySelectorAll('.modal-close');
-        const modals = document.querySelectorAll('.modal');
-
-        modalTriggers.forEach(trigger => {
-            trigger.addEventListener('click', () => {
-                const targetId = trigger.dataset.target;
-                const modal = document.getElementById(targetId);
-                modal.classList.add('is-open');
-            });
-        });
-
-        modalCloses.forEach(closeButton => {
-            closeButton.addEventListener('click', () => {
-                closeButton.closest('.modal').classList.remove('is-open');
-            });
-        });
-        
-        modals.forEach(modal => {
-            modal.addEventListener('click', (e) => {
-                if (e.target === modal) {
-                    modal.classList.remove('is-open');
-                }
-            });
-        });
-        
-        // --- Lógica para Animación de Scroll (Intersection Observer) ---
-        const fadeElements = document.querySelectorAll('.fade-in');
-        
-        const observerOptions = {
-            root: null,
-            rootMargin: '0px',
-            threshold: 0.1 
-        };
-
-        const observerCallback = (entries, observer) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('is-visible');
-                    observer.unobserve(entry.target);
-                }
-            });
-        };
-
-        const scrollObserver = new IntersectionObserver(observerCallback, observerOptions);
-
-        fadeElements.forEach(el => {
-            scrollObserver.observe(el);
-        });
-        
-        // --- NUEVO: Lógica para Acordeón de FAQ ---
-        const faqToggles = document.querySelectorAll('.faq-toggle');
-
-        faqToggles.forEach(toggle => {
-            toggle.addEventListener('click', () => {
-                // Alterna el ícono (gira 45 grados)
-                toggle.classList.toggle('is-active');
-                
-                // Obtiene el panel de contenido (que es el siguiente elemento)
-                const content = toggle.nextElementSibling;
-                
-                // Alterna la clase para mostrar/ocultar
-                content.classList.toggle('is-open');
-            });
-        });
-        
-    </script>
+    <script src="js/main.js"></script>
     
 </body>
 </html>
