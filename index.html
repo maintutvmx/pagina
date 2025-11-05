@@ -6,7 +6,7 @@
     <title>TuTV - Tu televisión sin limites</title>
     
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
-    
+   
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/simple-icons-font@v11/font/simple-icons.min.css">
     
@@ -17,7 +17,7 @@
 
     <header>
         <div class="container">
-            <h1>TuTV</h1>
+            <img src="images/logo_00.png">
             
             <nav class="main-nav">
                 <ul>
@@ -42,7 +42,7 @@
         
         <section id="inicio" class="hero">
             <div class="container">
-                <h2>TuTV</h2>
+                <img src="images/logo_03.png">
                 <p>Todo tu entretenimiento en un solo lugar.</p>
                 <a href="#planes" class="cta-button">Ver Planes</a>
             </div>
@@ -91,6 +91,7 @@
                 </div>
             </div>
         </section>
+
         <section id="info">
             <div class="container fade-in">
                 <div class="info-img">
@@ -104,6 +105,25 @@
             </div>
             
         </section>        
+
+        <section id="info">
+            <div class="container fade-in">
+                <div class="info-texto">
+                    <h2>¡Televisión sin cables, sin complicaciones!</h2>
+                    <p><strong>1️⃣ Elige tu plan:</strong> </p>
+                    <p>Selecciona el paquete que más se adapte a ti.</p>           
+                    <p>Desde 1 mes hasta planes familiares o empresariales.</p><br>
+                    <p><strong>2️⃣ Activa tu cuenta</strong></p>
+                    <p>Recibe tu acceso IPTV por WhatsApp o correo en minutos.</p><br> 
+                    <p><strong>3️⃣ Disfruta tu contenido</strong></p>
+                    <p>Conéctate desde tu Smart TV, TV Box o celular y empieza a disfrutar.</p>       
+                </div>
+                <div class="info-img">
+                    <img src="images/bkgnd_02.png" alt="Descripción de la imagen informativa">
+                </div>
+            </div>
+            
+        </section>
 
         <section id="planes">
             <div class="container fade-in">
@@ -131,10 +151,6 @@
                     </div>
                 </div>
             </div>
-        </section>
-
-
-        <section id="planes">
             <div class="container fade-in">
                 <h2>Solicita tu demo</h2>
                 <div class="planes-container">
@@ -164,6 +180,18 @@
             <div class="container fade-in">
                 <h2>Preguntas Frecuentes</h2>
                 <div class="faq-container">
+
+                    <div class="faq-item">
+                        <button type="button" class="faq-toggle">Requisitos generales<i class="fas fa-plus"></i></button>
+                        <div class="faq-content">
+                            <p><strong>Antes de comenzar, asegúrate de tener:</strong> </p><br>
+                            <p>🔹 Conexión a internet estable. <strong>(mínimo 10 Mbps recomendados).</strong></p>
+                            <p>🔹 Tu nombre de lista, usuario, contraseña y URL del servicio de TuTV <strong>(recibidos por WhatsApp).</strong></p>
+                            <p>🔹 Dispositivo compatible y actualizado.</p>
+                            <p>🔹 Aplicación de reproducción IPTV (te recomendamos <a href="https://www.iptvsmarters.com/" target="_blank">IPTV Smarters Pro</a>).</p>
+                            
+                        </div>
+                    </div>
                     <div class="faq-item">
                         <button type="button" class="faq-toggle">¿Qué necesito para mi instalación?<i class="fas fa-plus"></i></button>
                         <div class="faq-content">
@@ -214,7 +242,7 @@
                 </div>
             </div>
         </section>
-        
+   
         <section id="manuales">
             <div class="container fade-in">
                 <h2>Manuales de Instalación</h2>
@@ -222,6 +250,7 @@
                 <div class="manuales-grid">
                     <div class="manual-item modal-trigger" data-target="modal-android"><i class="si si-android"></i><h3>Android</h3></div>
                     <div class="manual-item modal-trigger" data-target="modal-ios"><i class="si si-apple"></i><h3>iOS</h3></div>
+                    <div class="manual-item modal-trigger" data-target="modal-googletv"><i class="si si-google"></i><h3>Google TV</h3></div>
                     <div class="manual-item modal-trigger" data-target="modal-firetv"><i class="si si-amazonfiretv"></i><h3>FireTV</h3></div>
                     <div class="manual-item modal-trigger" data-target="modal-samsung"><i class="si si-samsung"></i><h3>Samsung</h3></div>
                     <div class="manual-item modal-trigger" data-target="modal-lg"><i class="si si-lg"></i><h3>LG</h3></div>
@@ -258,7 +287,8 @@
             <p>&copy; 2025 TuTV. Todos los derechos reservados.</p>
         </div>
     </footer>
-    
+
+<!-- MANUALES -->         
     <div id="modal-android" class="modal">
         <div class="modal-content">
             <div class="modal-header">
@@ -269,22 +299,75 @@
                 <div class="step">
                     <div class="step-number">1</div>
                     <div class="step-content">
-                        <p>Descargue de aquí </p>
-                        <img src="https://via.placeholder.com/500x250.png?text=Imagen+Paso+1" alt="Paso 1">
+                        <p>Si estas en tu dispositivo (teléfono ó tablet), descarga la APK de <strong><a href="https://www.iptvsmarters.com/iptv-smarters-5.0.apk" target="_blank">IPTV Smarters Pro aquí</a></strong>.</p>
+                        <!--img src="https://via.placeholder.com/500x250.png?text=Paso+1:+Abrir+Play+Store" alt="Abrir Play Store"-->
                     </div>
                 </div>
                 <div class="step">
                     <div class="step-number">2</div>
                     <div class="step-content">
-                        <p>Busca <strong>"[Nombre de tu App]"</strong>...</p>
+                        <p>Da permisos de instalar app de origenes desconocidos o de terceros e instala la aplicación.</p>
+                        <!--img src="https://via.placeholder.com/500x250.png?text=Paso+2:+Buscar+la+App" alt="Buscar la App"-->
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <p>Una vez instalada, ábrela, acepta los terminos y condiciones para agregar un nuevo <strong>EXTREME CODE</strong>. </p>
+                        <!--mg src="https://via.placeholder.com/500x250.png?text=Paso+4:+Ingresar+datos" alt="Ingresar datos"-->
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <div class="step-content">
+                        <p>Ingresa el <strong>nombre de la lista, usuario, contraseña y URL</strong> que te proporcionamos. ¡Y listo, a disfrutar!</p>
+                        <!--mg src="https://via.placeholder.com/500x250.png?text=Paso+4:+Ingresar+datos" alt="Ingresar datos"-->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="modal-googletv" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2><i class="si si-google"></i> Manual de Google TV</h2>
+                <span class="modal-close">&times;</span>
+            </div>
+            <div class="modal-body">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <p><strong>Activa la instalación de aplicaciones externas</strong></p>
+                        <p>🔹 Ve a Configuración → Seguridad y restricciones.</p>
+                        <p>🔹 Habilita Fuentes desconocidas (Unknown Sources) para permitir instalaciones externas.</p>
+                        <!--img src="https://via.placeholder.com/500x250.png?text=Imagen+Paso+1" alt="Paso 1"-->
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <p><strong>Instala Downloader by AFTVnews</strong></p>
+                        <p>🔹 Desde la pantalla principal, entra a la tienda de aplicaciones (Google Play).</p>
+                        <p>🔹 Busca <a href="https://play.google.com/store/apps/details?id=com.esaba.downloader&pcampaignid=web_share" target="_blank"><strong>Downloader</strong></a> (desarrollador: AFTVnews).</p>
+                        <p>🔹 Descarga e instala la aplicación.</p>
+                        <p>🔹 Abre Downloader.</p>
+                        <p>🔹 Si te solicita permisos de almacenamiento o red, selecciona Permitir (Allow).</p>
                         <img src="https://via.placeholder.com/500x250.png?text=Imagen+Paso+2" alt="Paso 2">
                     </div>
                 </div>
                 <div class="step">
                     <div class="step-number">3</div>
                     <div class="step-content">
-                        <p>Presiona <strong>"Instalar"</strong>...</p>
-                        <img src="https://via.placeholder.com/500x250.png?text=Imagen+Paso+3" alt="Paso 3">
+                        <p><strong>Usa el código IPTV Smarters Pro (6468112)</strong></p>
+                        <p>🔹 En la pantalla principal de Downloader, selecciona la opción “Home” o “Browser”.</p>
+                        <p>🔹 En la barra de búsqueda o campo de código, escribe: <strong>6468112</strong></p>
+                        <p>🔹 Presiona “Go” o “OK” en tu control remoto.</p>
+                        <p>🔹 Downloader conectará al servidor seguro de TuTV y descargará la app correspondiente.</p>
+                        <p>🔹 Espera unos segundos a que se complete la descarga.</p>
+                        <p>🔹 Una vez descargado el archivo, aparecerá la ventana de instalación.</p>
+                        <p>🔹 Selecciona Instalar (Install).</p>
+                        <img src="https://via.placeholder.com/500x250.png?text=Imagen+Paso+2" alt="Paso 2">
                     </div>
                 </div>
                 <div class="step">
@@ -294,12 +377,26 @@
                         <img src="https://via.placeholder.com/500x250.png?text=Imagen+Paso+4" alt="Paso 4">
                     </div>
                 </div>
+                <div class="step">
+                    <div class="step-number">5</div>
+                    <div class="step-content">
+                        <p>Una vez instalada, ábrela, acepta los terminos y condiciones para agregar un nuevo <strong>EXTREME CODE</strong>. </p>
+                        <!--mg src="https://via.placeholder.com/500x250.png?text=Paso+4:+Ingresar+datos" alt="Ingresar datos"-->
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-number">6</div>
+                    <div class="step-content">
+                        <p>Ingresa el <strong>nombre de la lista, usuario, contraseña y URL</strong> que te proporcionamos. ¡Y listo, a disfrutar!</p>
+                        <!--mg src="https://via.placeholder.com/500x250.png?text=Paso+4:+Ingresar+datos" alt="Ingresar datos"-->
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
-    
+    </div>    
+
     <div id="modal-ios" class="modal">
-        <div class="modal-content">
+       <div class="modal-content">
             <div class="modal-header">
                 <h2><i class="si si-apple"></i> Manual de iOS</h2>
                 <span class="modal-close">&times;</span>
@@ -308,27 +405,31 @@
                 <div class="step">
                     <div class="step-number">1</div>
                     <div class="step-content">
-                        <p>Paso 1 para iOS...</p>
-                        <img src="https://via.placeholder.com/500x250.png?text=Paso+1+iOS" alt="Paso 1"></div>
+                        <p>En tu iPhone o iPad, abre la <strong>App Store</strong> (el ícono azul).</p>
+                        <!--img src="https://via.placeholder.com/500x250.png?text=Paso+1:+Abrir+App+Store" alt="Abrir App Store"-->
                     </div>
+                </div>
                 <div class="step">
                     <div class="step-number">2</div>
                     <div class="step-content">
-                        <p>Paso 2 para iOS...</p>
-                        <img src="https://via.placeholder.com/500x250.png?text=Paso+2+iOS" alt="Paso 2"></div>
+                        <p>Ve a la pestaña <strong>"Buscar"</strong> en la esquina inferior derecha y escribe <strong><a href="https://apps.apple.com/es/app/smarters-player-lite/id1628995509">IPTV Smarters Lite</a></strong>.</p>
+                        <!--img src="https://via.placeholder.com/500x250.png?text=Paso+2:+Buscar+la+App" alt="Buscar la App"-->
                     </div>
+                </div>
                 <div class="step">
                     <div class="step-number">3</div>
                     <div class="step-content">
-                        <p>Paso 3 para iOS...</p>
-                        <img src="https://via.placeholder.com/500x250.png?text=Paso+3+iOS" alt="Paso 3"></div>
+                        <p>Presiona el botón <strong>"Obtener"</strong> (o el ícono de la nube si ya la habías bajado antes). Es posible que tengas que confirmar con tu Face ID o contraseña.</p>
+                        <!--img src="https://via.placeholder.com/500x250.png?text=Paso+3:+Obtener+la+App" alt="Obtener la App"-->
                     </div>
+                </div>
                 <div class="step">
                     <div class="step-number">4</div>
                     <div class="step-content">
-                        <p>Paso 4 para iOS...</p>
-                        <img src="https://via.placeholder.com/500x250.png?text=Paso+4+iOS" alt="Paso 4"></div>
+                        <p>Abre la app e introduce tu <strong>nombre de la lista, usuario, contraseña y URL</strong> para acceder al servicio.</p>
+                        <!--img src="https://via.placeholder.com/500x250.png?text=Paso+4:+Ingresar+datos" alt="Ingresar datos"-->
                     </div>
+                </div>
             </div>
         </div>
     </div>
@@ -343,24 +444,62 @@
                 <div class="step">
                     <div class="step-number">1</div>
                     <div class="step-content">
-                        <p>Paso 1 para FireTV...</p>
-                        <img src="https://via.placeholder.com/500x250.png?text=Paso+1+FireTV" alt="Paso 1"></div>
+                        <p><strong>Activa la instalación de aplicaciones externas</strong></p>
+                        <p>🔹 En el menú principal, selecciona Configuración (Settings).</p>
+                        <p>🔹 Ve a Mi Fire TV → Opciones para desarrolladores.</p>
+                        <p>🔹 Activa las siguientes opciones:</p>
+                        <p> Depuración ADB (ADB Debugging) → Activado</p>
+                        <p> Apps de origen desconocido (Install Unknown Apps) → Activado para “Downloader”.</p>
+                        <!--img src="https://via.placeholder.com/500x250.png?text=Imagen+Paso+1" alt="Paso 1"-->
                     </div>
+                </div>
                 <div class="step">
                     <div class="step-number">2</div>
-                    <div class="step-content"><p>Paso 2 para FireTV...</p>
-                        <img src="https://via.placeholder.com/500x250.png?text=Paso+2+FireTV" alt="Paso 2"></div>
+                    <div class="step-content">
+                        <p><strong>Instala Downloader by AFTVnews</strong></p>
+                        <p>🔹 Desde la pantalla principal, entra a la tienda de aplicaciones (Google Play).</p>
+                        <p>🔹 Busca <a href="https://play.google.com/store/apps/details?id=com.esaba.downloader&pcampaignid=web_share" target="_blank"><strong>Downloader</strong></a> (desarrollador: AFTVnews).</p>
+                        <p>🔹 Descarga e instala la aplicación.</p>
+                        <p>🔹 Abre Downloader.</p>
+                        <p>🔹 Si te solicita permisos de almacenamiento o red, selecciona Permitir (Allow).</p>
+                        <img src="https://via.placeholder.com/500x250.png?text=Imagen+Paso+2" alt="Paso 2">
                     </div>
+                </div>
                 <div class="step">
                     <div class="step-number">3</div>
-                    <div class="step-content"><p>Paso 3 para FireTV...</p>
-                        <img src="https://via.placeholder.com/500x250.png?text=Paso+3+FireTV" alt="Paso 3"></div>
+                    <div class="step-content">
+                        <p><strong>Usa el código IPTV Smarters Pro (6468112)</strong></p>
+                        <p>🔹 En la pantalla principal de Downloader, selecciona la opción “Home” o “Browser”.</p>
+                        <p>🔹 En la barra de búsqueda o campo de código, escribe: <strong>6468112</strong></p>
+                        <p>🔹 Presiona “Go” o “OK” en tu control remoto.</p>
+                        <p>🔹 Downloader conectará al servidor seguro de TuTV y descargará la app correspondiente.</p>
+                        <p>🔹 Espera unos segundos a que se complete la descarga.</p>
+                        <p>🔹 Una vez descargado el archivo, aparecerá la ventana de instalación.</p>
+                        <p>🔹 Selecciona Instalar (Install).</p>
+                        <img src="https://via.placeholder.com/500x250.png?text=Imagen+Paso+2" alt="Paso 2">
                     </div>
+                </div>
                 <div class="step">
                     <div class="step-number">4</div>
-                    <div class="step-content"><p>Paso 4 para FireTV...</p>
-                        <img src="https://via.placeholder.com/500x250.png?text=Paso+4+FireTV" alt="Paso 4"></div>
+                    <div class="step-content">
+                        <p>Ingresa tu <strong>usuario y contraseña</strong>...</p>
+                        <img src="https://via.placeholder.com/500x250.png?text=Imagen+Paso+4" alt="Paso 4">
                     </div>
+                </div>
+                <div class="step">
+                    <div class="step-number">5</div>
+                    <div class="step-content">
+                        <p>Una vez instalada, ábrela, acepta los terminos y condiciones para agregar un nuevo <strong>EXTREME CODE</strong>. </p>
+                        <!--mg src="https://via.placeholder.com/500x250.png?text=Paso+4:+Ingresar+datos" alt="Ingresar datos"-->
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-number">6</div>
+                    <div class="step-content">
+                        <p>Ingresa el <strong>nombre de la lista, usuario, contraseña y URL</strong> que te proporcionamos. ¡Y listo, a disfrutar!</p>
+                        <!--mg src="https://via.placeholder.com/500x250.png?text=Paso+4:+Ingresar+datos" alt="Ingresar datos"-->
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -368,34 +507,45 @@
     <div id="modal-samsung" class="modal">
         <div class="modal-content">
             <div class="modal-header">
-                <h2><i class="si si-samsung"></i> Manual de Samsung</h2>
+                <h2><i class="si si-samsung"></i> Manual de Samsung TV</h2>
                 <span class="modal-close">&times;</span>
             </div>
             <div class="modal-body">
                 <div class="step">
                     <div class="step-number">1</div>
                     <div class="step-content">
-                        <p>Paso 1 para Samsung...</p>
-                        <img src="images/guide/samsung/sam_guide_00.png" alt="Paso 1"></div>
+                        <p>Presiona el botón <strong>"Smart Hub"</strong> (el ícono de la casa 🏠) en tu control remoto.</p>
+                        <!--img src="https://via.placeholder.com/500x250.png?text=Paso+1:+Abrir+Smart+Hub" alt="Abrir Smart Hub"-->
                     </div>
+                </div>
                 <div class="step">
                     <div class="step-number">2</div>
                     <div class="step-content">
-                        <p>Paso 2 para Samsung...</p>
-                        <img src="images/guide/samsung/sam_guide_01.png" alt="Paso 2"></div>
+                        <p>Navega hasta la sección <strong>"Apps"</strong> (Tienda de Aplicaciones) y ábrela.</p>
+                        <!--img src="https://via.placeholder.com/500x250.png?text=Paso+2:+Abrir+Tienda+Apps" alt="Abrir Tienda Apps"-->
                     </div>
+                </div>
                 <div class="step">
                     <div class="step-number">3</div>
                     <div class="step-content">
-                        <p>Paso 3 para Samsung...</p>
-                        <img src="https://via.placeholder.com/500x250.png?text=Paso+3+Samsung" alt="Paso 3"></div>
+                        <p>Selecciona el ícono de <strong>Búsqueda</strong> (la lupa 🔍) y escribe <strong>IPTV Smarters Pro</strong>.</p>
+                        <img src="images/guide/samsung/sam_guide_00.png" alt="Buscar la App">
                     </div>
+                </div>
                 <div class="step">
                     <div class="step-number">4</div>
                     <div class="step-content">
-                        <p>Paso 4 para Samsung...</p>
-                        <img src="https://via.placeholder.com/500x250.png?text=Paso+4+Samsung" alt="Paso 4"></div>
+                        <p>Selecciona <strong>"Instalar"</strong>.</p>
+                        <img src="images/guide/samsung/sam_guide_01.png" alt="Instalar y acceder">
                     </div>
+                </div>
+                <div class="step">
+                    <div class="step-number">5</div>
+                    <div class="step-content">
+                        <p>Una vez lista, ábrela e ingresa tu <strong>nombre de la lista, usuario, contraseña y URL</strong>y selecciona en <strong>"ADD USER" o "AÑADIR USUARIO"</strong>.</p>
+                        <img src="images/guide/samsung/sam_guide_02.png" alt="Instalar y acceder">
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -410,27 +560,38 @@
                 <div class="step">
                     <div class="step-number">1</div>
                     <div class="step-content">
-                        <p>Paso 1 para LG...</p>
-                        <img src="https://via.placeholder.com/500x250.png?text=Paso+1+LG" alt="Paso 1"></div>
+                        <p>Presiona el botón <strong>"Home"</strong> (el ícono de la casa 🏠) en tu control remoto.</p>
+                        <!--img src="https://via.placeholder.com/500x250.png?text=Paso+1:+Abrir+Smart+Hub" alt="Abrir Smart Hub"-->
                     </div>
+                </div>
                 <div class="step">
                     <div class="step-number">2</div>
                     <div class="step-content">
-                        <p>Paso 2 para LG...</p>
-                        <img src="https://via.placeholder.com/500x250.png?text=Paso+2+LG" alt="Paso 2"></div>
+                        <p>Navega hasta la sección <strong>"LG Content Store"</strong> (Tienda de Aplicaciones) y ábrela.</p>
+                        <!--img src="https://via.placeholder.com/500x250.png?text=Paso+2:+Abrir+Tienda+Apps" alt="Abrir Tienda Apps"-->
                     </div>
+                </div>
                 <div class="step">
                     <div class="step-number">3</div>
                     <div class="step-content">
-                        <p>Paso 3 para LG...</p>
-                        <img src="https://via.placeholder.com/500x250.png?text=Paso+3+LG" alt="Paso 3"></div>
+                        <p>Selecciona el ícono de <strong>Búsqueda</strong> (la lupa 🔍) y escribe <strong>IPTV Smarters Pro</strong>.</p>
+                        <img src="images/guide/lg/lg_00.png" alt="Buscar la App">
                     </div>
+                </div>
                 <div class="step">
                     <div class="step-number">4</div>
                     <div class="step-content">
-                        <p>Paso 4 para LG...</p>
-                        <img src="https://via.placeholder.com/500x250.png?text=Paso+4+LG" alt="Paso 4"></div>
+                        <p>Selecciona <strong>"Instalar"</strong>.</p>
+                        <img src="images/guide/lg/lg_01.png" alt="Instalar y acceder">
                     </div>
+                </div>
+                <div class="step">
+                    <div class="step-number">5</div>
+                    <div class="step-content">
+                        <p>Una vez lista, ábrela e ingresa tu <strong>nombre de la lista, usuario, contraseña y URL</strong>y selecciona en <strong>"ADD USER" o "AÑADIR USUARIO"</strong>.</p>
+                        <img src="images/guide/lg/lg_02.png" alt="Instalar y acceder">
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -530,6 +691,7 @@
             </div>
         </div>
     </div>
+<!-- FIN MANUALES -->
 
     <a href="https://wa.me/521XXXXXXXXXX?text=Hola%2C%20me%20gustaría%20obtener%20más%20información." 
        class="whatsapp-float" 
